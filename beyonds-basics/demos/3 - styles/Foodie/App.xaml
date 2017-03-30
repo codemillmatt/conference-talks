@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Foodie.App">
+<Application.Resources>
+		<ResourceDictionary>
+			<!-- The Colors -->
+			<Color x:Key="DarkPrimary">#E64A19</Color>
+			<Color x:Key="Primary">#FF5722</Color>
+			<Color x:Key="LightPrimary">#FFCCBC</Color>
+
+			<Color x:Key="PrimaryText">#212121</Color>
+			<Color x:Key="SecondaryText">#757575</Color>
+			<Color x:Key="LightText">#FFFFFF</Color>
+
+			<Color x:Key="Background">#FFFFFF</Color>
+			<Color x:Key="LightPrimaryBackground">#F6F6F6</Color>
+
+			<Color x:Key="Accent">#4CAF50</Color>
+			<Color x:Key="AlternateAccent">#3F51B5</Color>
+
+			<Color x:Key="TrueColor">#16CA86</Color>
+			<Color x:Key="FalseColor">#FF4081</Color>
+			<Color x:Key="PositiveAction">#4CAF50</Color>
+			<Color x:Key="NegativeAction">#D52941</Color>
+
+			<!-- Bold Recommended Cell Colors -->
+			<Color x:Key="BoldPrimaryText">#35A7FF</Color>
+			<Color x:Key="BoldLightPrimaryBackground">#C9F9CD</Color>
+			<Color x:Key="BoldLightText">#FFE74C</Color>
+			<Color x:Key="BoldAccent">#FF5964</Color>
+			<Color x:Key="BoldSecondaryText">#6CBFFF</Color>
+			
+			<Style x:Key="OverallCellContentStyle" TargetType="ContentView">
+				<Setter Property="Margin" Value="10" />
+				<Setter Property="BackgroundColor" Value="{StaticResource LightPrimaryBackground}" />
+			</Style>
+
+			<Style x:Key="CellPrepDetailsStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="TextColor" Value="{StaticResource SecondaryText}" />
+				<Setter Property="Margin" Value="0,5,0,0" />
+			</Style>
+
+			<Style TargetType="Button">
+				<Setter Property="BorderRadius" Value="10" />
+				<Setter Property="FontAttributes" Value="Bold" />
+				<Setter Property="TextColor" Value="{StaticResource LightText}" />
+				<Setter Property="BackgroundColor" Value="{StaticResource PositiveAction}" />
+			</Style>
+
+			<Style x:Key="RecommendedBannerStyle" TargetType="Label">
+				<Setter Property="TextColor" Value="{StaticResource LightText}" />
+				<Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+				<Setter Property="Margin" Value="0" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="FontSize" Value="Micro" />
+				<Setter Property="FontAttributes" Value="Bold" />
+			</Style>
+			
+			<Style x:Key="RecipeNameStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="Medium" />
+				<Setter Property="FontAttributes" Value="Bold" />
+				<Setter Property="Margin" Value="5,0,0,0" />
+				<Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+			</Style>
+
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

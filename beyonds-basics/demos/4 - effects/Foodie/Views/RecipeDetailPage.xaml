@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Foodie;assembly=Foodie"
+		x:Class="Foodie.RecipeDetailPage"
+		Title="Details">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:RecipeToImageValueConverter x:Key="imageConverter" Assembly="Foodie.Images" />
+
+			<Style x:Key="centerAlignStyle" TargetType="Label">
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
+			</Style>
+
+			<Style x:Key="prepInfoStyle" TargetType="Label" BasedOn="{StaticResource centerAlignStyle}">					
+				<Setter Property="TextColor" Value="{StaticResource LightText}" />
+			</Style>
+
+			<Style x:Key="microLabelStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="Micro" />
+				<Setter Property="Margin" Value="10,0,0,0" />
+				<Setter Property="TextColor" Value="{StaticResource AlternateAccent}" />
+			</Style>
+
+			<Style x:Key="multiLineTextStyle" TargetType="Label">
+				<Setter Property="VerticalTextAlignment" Value="Start" />
+				<Setter Property="Margin" Value="10,0,0,10" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<StackLayout>
+			<ScrollView VerticalOptions="FillAndExpand">
+				<Grid RowSpacing="0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="70" />
+						<RowDefinition Height="50" />
+						<RowDefinition Height="70" />
+						<RowDefinition Height="25" />
+						<RowDefinition Height="40" />
+						<RowDefinition Height="40" />
+						<RowDefinition Height="20" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="20" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<Image Source="{Binding ImageName, Converter={StaticResource imageConverter}}" Aspect="AspectFill"
+							Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" />
+					<BoxView Color="{StaticResource SecondaryText}" Opacity="0.25"
+						Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+
+					<Label Text="{Binding RecipeName}" FontSize="28" Margin="-30,5,0,0" TextColor="{StaticResource LightText}"
+						FontAttributes="Bold"
+						Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+
+					 
+					<BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+							Color="#3F51B5" /> 	
+					<Label Text="{Binding PreparationTime, StringFormat='{0} prep'}" 
+						Style="{StaticResource prepInfoStyle}"
+						Grid.Row="3" Grid.Column="0" />
+					<Label Text="{Binding CookTime, StringFormat='{0} cook'}" 
+						Style="{StaticResource prepInfoStyle}"
+						Grid.Row="3" Grid.Column="1" />
+					<Label Text="{Binding NumberOfServings, StringFormat='serves {0}'}" 
+						Style="{StaticResource prepInfoStyle}"
+						Grid.Row="3" Grid.Column="2" />
+
+					<Label Text="{Binding MealType}" TextColor="{StaticResource PositiveAction}" FontSize="Large" 
+						Style="{StaticResource centerAlignStyle}"							
+						Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"  />
+
+					<Label Text="{Binding Difficulty, StringFormat='** {0} difficulty **'}"  TextColor="{StaticResource AlternateAccent}"
+						Style="{StaticResource centerAlignStyle}"
+						Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+
+					<Label Text="Ingredients" Style="{StaticResource microLabelStyle}"
+						Grid.Row="6" Grid.Column="0" />
+					<Label Text="{Binding Ingredients}" Style="{StaticResource multiLineTextStyle}"
+						Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
+
+					<Label Text="Directions" Style="{StaticResource microLabelStyle}"
+						Grid.Row="8" Grid.Column="0" />
+					<Label Text="{Binding Directions}" Style="{StaticResource multiLineTextStyle}"
+						Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" />
+				</Grid>
+			</ScrollView>
+			<Button Text="Make Again!" />
+		</StackLayout>
+	</ContentPage.Content>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Edit" Clicked="EditRecipe_Clicked" />
+	</ContentPage.ToolbarItems>
+</ContentPage>

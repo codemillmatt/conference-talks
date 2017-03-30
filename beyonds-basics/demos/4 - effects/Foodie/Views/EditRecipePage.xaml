@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:Foodie"
+		xmlns:iOS="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
+		xmlns:droid="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
+        xmlns:formsDroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+		x:Class="Foodie.EditRecipePage"
+		Title="Foodie">
+	<ContentPage.Content>
+		<TableView Intent="Form" HasUnevenRows="true">
+			<TableView.Root>
+				<TableSection Title="Info">
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Label Text="Recipe Name" VerticalOptions="Center">
+									<Label.Triggers>
+										<DataTrigger TargetType="Label"
+												Binding="{Binding Source={x:Reference recipeNameEntry},
+													Path=IsFocused}" Value="True">
+											<Setter Property="TextColor" Value="#D32F2F" />
+										</DataTrigger>
+									</Label.Triggers>
+								</Label>
+								<Entry x:Name="recipeNameEntry" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"
+										Text="{Binding RecipeName}">
+									<Entry.Triggers>
+										<EventTrigger Event="TextChanged">
+											<local:RequiredValidationTriggerAction />
+										</EventTrigger>
+									</Entry.Triggers>
+								</Entry>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Label Text="Prep Time" VerticalOptions="Center">
+									<Label.Triggers>
+										<DataTrigger TargetType="Label"
+												Binding="{Binding Source={x:Reference prepTimeEntry},
+													Path=IsFocused}" Value="True">
+											<Setter Property="TextColor" Value="#D32F2F" />
+										</DataTrigger>
+									</Label.Triggers>
+								</Label>
+								<Entry x:Name="prepTimeEntry" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"
+										Text="{Binding PreparationTime}" />
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Label Text="Cook Time" VerticalOptions="Center">
+									<Label.Triggers>
+										<DataTrigger TargetType="Label"
+												Binding="{Binding Source={x:Reference cookTimeEntry},
+													Path=IsFocused}" Value="True">
+											<Setter Property="TextColor" Value="#D32F2F" />
+										</DataTrigger>
+									</Label.Triggers>
+								</Label>
+								<Entry x:Name="cookTimeEntry" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"
+										Text="{Binding CookTime}" />
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Label Text="Number of Servings" VerticalOptions="Center">
+									<Label.Triggers>
+										<DataTrigger TargetType="Label" 
+												Binding="{Binding Source={x:Reference servingsEntry}, 
+													Path=IsFocused}" Value="True">
+											<Setter Property="TextColor" Value="#D32F2F" />
+										</DataTrigger>
+									</Label.Triggers>
+								</Label>
+								<Entry Text="{Binding NumberOfServings}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" x:Name="servingsEntry">
+									<Entry.Behaviors>
+										<local:NumericEntryBehavior />
+									</Entry.Behaviors>
+								</Entry>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Label Text="Make Again?" VerticalOptions="Center" />
+								<iOS:UISwitch On="{Binding WillMakeAgain}" 
+										View.HorizontalOptions="EndAndExpand" View.VerticalOptions="Center" />
+
+								<droid:Switch x:Arguments="{x:Static formsDroid:Forms.Context}" 
+								    ShowText="true" TextOff="Nope" TextOn="Yup" 
+								    Checked="{Binding WillMakeAgain, Mode=TwoWay, UpdateSourceEventName=CheckedChange}" 
+								    View.HorizontalOptions="EndAndExpand" View.VerticalOptions="Center"/>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+				<TableSection Title="Meal">
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Picker HorizontalOptions="FillAndExpand" x:Name="mealPicker">
+									<Picker.Items>
+										<x:Static Member="local:MealType.Breakfast" />
+										<x:Static Member="local:MealType.Lunch" />
+										<x:Static Member="local:MealType.Dinner" />
+										<x:Static Member="local:MealType.Snack" />
+									</Picker.Items>
+									<Picker.SelectedIndex>0</Picker.SelectedIndex>
+								</Picker>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+				<TableSection Title="Difficulty">
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Picker HorizontalOptions="FillAndExpand" x:Name="difficultyPicker">
+									<Picker.Items>
+										<x:Static Member="local:Difficulty.Easy" />
+										<x:Static Member="local:Difficulty.Medium" />
+										<x:Static Member="local:Difficulty.Hard" />
+									</Picker.Items>
+									<Picker.SelectedIndex>0</Picker.SelectedIndex>
+								</Picker>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+				<TableSection Title="Ingredients">
+					<ViewCell>
+						<ContentView HeightRequest="125" Margin="15,10,10,10">
+							<Editor Text="{Binding Ingredients}">
+								<Editor.Triggers>
+									<Trigger TargetType="Editor" Property="IsFocused" Value="True">
+										<Setter Property="BackgroundColor" Value="#FFF9C4"></Setter>
+									</Trigger>
+									<Trigger TargetType="Editor" Property="IsFocused" Value="True">
+										<Setter Property="FontAttributes" Value="Bold"></Setter>
+									</Trigger>
+								</Editor.Triggers>
+							</Editor>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+				<TableSection Title="Directions">
+					<ViewCell>
+						<ContentView HeightRequest="200" Margin="15,10,10,10">
+							<Editor Text="{Binding Directions}">
+								<Editor.Triggers>
+									<Trigger TargetType="Editor" Property="IsFocused" Value="True">
+										<Setter Property="BackgroundColor" Value="#FFF9C4"></Setter>
+									</Trigger>
+									<Trigger TargetType="Editor" Property="IsFocused" Value="True">
+										<Setter Property="FontAttributes" Value="Bold"></Setter>
+									</Trigger>
+								</Editor.Triggers>
+							</Editor>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+			</TableView.Root>
+		</TableView>
+	</ContentPage.Content>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Save" Clicked="HandleSave_Clicked" />
+		<ToolbarItem Text="Cancel" Clicked="HandleCancel_Clicked" />
+	</ContentPage.ToolbarItems>
+</ContentPage>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Foodie.RecipeEditPage">
+	<ContentPage.Content>
+		<TableView Intent="Form">
+			<TableView.Root>
+				<TableSection Title="Recipe Information">
+					<EntryCell Label="Recipe Name" Text="{Binding RecipeName}" />
+					<SwitchCell Text="Make Again?" On="{Binding MakeAgain}" />
+					<EntryCell Label="Cook Time" Text="{Binding CookTime}" />
+				</TableSection>
+			</TableView.Root>
+		</TableView>
+	</ContentPage.Content>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Save" Command="{Binding SaveRecipe}" />
+	</ContentPage.ToolbarItems>
+</ContentPage>

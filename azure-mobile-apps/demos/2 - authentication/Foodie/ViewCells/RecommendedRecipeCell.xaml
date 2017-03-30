@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Foodie; assembly=Foodie"
+		x:Class="Foodie.RecommendedRecipeCell">
+	<ViewCell.Height>
+		<OnPlatform x:TypeArguments="x:Double" iOS="90" Android="95" />
+	</ViewCell.Height>
+	<ContentView Style="{DynamicResource CellContentStyle}" x:Name="overallContent">
+		<ContentView.Resources>
+			<ResourceDictionary>				
+				<Style x:Key="BoldOverallCellContentStyle" TargetType="ContentView">
+					<Setter Property="Margin" Value="10" />
+					<Setter Property="BackgroundColor" Value="{StaticResource BoldLightPrimaryBackground}" />
+				</Style>
+
+				<Style x:Key="BoldRecommendedBannerStyle" TargetType="Label">
+					<Setter Property="TextColor" Value="{StaticResource BoldLightText}" />
+					<Setter Property="BackgroundColor" Value="{StaticResource BoldAccent}" />
+					<Setter Property="Margin" Value="0" />
+					<Setter Property="HorizontalTextAlignment" Value="Center" />
+					<Setter Property="FontSize" Value="Micro" />
+					<Setter Property="FontAttributes" Value="Bold" />
+				</Style>
+				
+				<Style x:Key="BoldRecipeNameStyle" TargetType="Label">
+					<Setter Property="FontSize" Value="Large" />
+					<Setter Property="FontAttributes" Value="Bold" />
+					<Setter Property="HorizontalTextAlignment" Value="Center" />
+					<Setter Property="Margin" Value="5,0,0,0" />
+					<Setter Property="TextColor" Value="{StaticResource BoldPrimaryText}" />
+				</Style>
+
+				<Style x:Key="BoldCellPrepDetailsStyle" TargetType="Label">
+					<Setter Property="FontSize" Value="Small" />
+					<Setter Property="FontAttributes" Value="Italic" />
+					<Setter Property="TextColor" Value="{StaticResource BoldSecondaryText}" />
+					<Setter Property="Margin" Value="0,5,0,0" />
+				</Style>
+			</ResourceDictionary>
+		</ContentView.Resources>	
+		<Grid ColumnSpacing="1" RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="15" />
+				<RowDefinition Height="1.1*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1.5*" />
+			</Grid.ColumnDefinitions>
+			<Label Text="RECOMMENDED" Style="{DynamicResource BannerStyle}"
+				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  />
+			<Label Text="{Binding RecipeName}" Style="{DynamicResource NameStyle}"
+				Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+			<Label Text="{Binding PreparationTime, StringFormat='Prep: {0}'}"
+				Margin="10,5,0,0" Style="{DynamicResource DetailsStyle}"
+				Grid.Row="2" Grid.Column="0" />
+			<Label Text="{Binding CookTime, StringFormat='Cook: {0}'}" 
+				Style="{DynamicResource DetailsStyle}"
+				Grid.Row="2" Grid.Column="1" />	
+		</Grid>
+	</ContentView>
+</ViewCell>

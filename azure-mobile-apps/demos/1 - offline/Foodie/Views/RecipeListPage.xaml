@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Foodie;assembly=Foodie"
+		xmlns:formsDroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+		xmlns:foodieDroid="clr-namespace:Foodie.Droid;assembly=Foodie.Droid;targetPlatform=Android"
+		xmlns:foodieIOS="clr-namespace:Foodie.iOS;assembly=Foodie.iOS;targetPlatform=iOS"		
+		x:Class="Foodie.RecipeListPage"
+		Title="Recipes">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:RecipeDataTemplateSelector x:Key="recipeTemplateSel" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<AbsoluteLayout>
+			<ListView x:Name="recipeList"
+					ItemsSource="{Binding AllRecipes}" 
+					SeparatorVisibility="None"
+					HasUnevenRows="true"
+					GroupDisplayBinding="{Binding Title}"
+					IsGroupingEnabled="true"
+					ItemTemplate="{StaticResource recipeTemplateSel}"
+					ItemSelected="Handle_ItemSelected"
+					CachingStrategy="RecycleElement"
+					AbsoluteLayout.LayoutFlags="SizeProportional"
+					AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+			<foodieDroid:FoodieFab x:Arguments="{x:Static formsDroid:Forms.Context}" UseCompatPadding="true" 
+				AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"
+				Command="{Binding AddRecipeCommand}"/>
+
+			<foodieIOS:FoodieFab AbsoluteLayout.LayoutBounds="1,1,50,50" 
+				AbsoluteLayout.LayoutFlags="PositionProportional" View.Margin="0,0,10,10" 
+				Command="{Binding AddRecipeCommand}"/>
+			
+		</AbsoluteLayout>
+	</ContentPage.Content>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="change" Clicked="ChangeStyles_Click" />
+	</ContentPage.ToolbarItems>
+</ContentPage>

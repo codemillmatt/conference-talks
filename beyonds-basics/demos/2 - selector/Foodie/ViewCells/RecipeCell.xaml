@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:Foodie; assembly=Foodie"
+	x:Class="Foodie.RecipeCell"
+	Height="200">
+	<ContentView Margin="10">
+		<ContentView.Resources>
+			<ResourceDictionary>
+				<local:BoolToValueConverter x:Key="colorMe" x:TypeArguments="Color" 
+					TrueValue="#16CA86" FalseValue="#FF4081" />
+				<local:RecipeToImageValueConverter x:Key="imageConvert" Assembly="Foodie.Images" />
+			</ResourceDictionary>
+		</ContentView.Resources>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition Height="100" />
+				<RowDefinition Height="5" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<BoxView Color="#3F51B5" 
+				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+			<Label Text="{Binding MealType}" TextColor="White" 
+				FontSize="Large" VerticalTextAlignment="Center" Margin="10,0,0,0" 
+				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />			
+
+			<Image Aspect="AspectFill"
+				Source="{Binding ImageName, Converter={StaticResource imageConvert}}"
+				Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+			<BoxView Color="#757575" Opacity=".25" 
+				Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+			<Label Text="{Binding RecipeName}" TextColor="White" 
+				Margin="-30,5,0,0" FontSize="28" FontAttributes="Bold" 
+				Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+
+			<BoxView Color="{Binding WillMakeAgain, Converter={StaticResource colorMe}}"
+				Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+
+			<BoxView Color="#F6F6F6" 
+				Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+			<Label Text="{Binding PreparationTime, StringFormat='{0} prep'}" 
+				Margin="10,5,0,0" FontSize="Small" TextColor="#757575" 
+				Grid.Row="3" Grid.Column="0" />
+			<Label Text="{Binding CookTime, StringFormat='{0} cook'}" 
+				Margin="0,5,0,0" FontSize="Small" TextColor="#757575" 
+				Grid.Row="3" Grid.Column="1" />
+			<Label Text="{Binding NumberOfServings, StringFormat='serves {0}'}" 
+				Margin="0,5,0,0" FontSize="Small" TextColor="#757575" 
+				Grid.Row="3" Grid.Column="2" />
+
+			<Label Text="View Recipe &gt;" Font="Micro" HorizontalTextAlignment="End" 
+				Margin="0,5,10,0" TextColor="#4CAF50" FontAttributes="Bold" 
+				Grid.Row="4" Grid.Column="2" />
+		</Grid>
+	</ContentView>
+</ViewCell>

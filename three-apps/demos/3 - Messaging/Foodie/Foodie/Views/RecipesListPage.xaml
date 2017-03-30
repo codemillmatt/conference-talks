@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:formsDroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+	xmlns:foodieDroid="clr-namespace:Foodie.Droid;assembly=Foodie.Droid;targetPlatform=Android"
+	x:Class="Foodie.RecipesListPage"	
+	BackgroundImage="back.png"
+	Title="Recipes">
+	<ContentPage.Content>
+		<AbsoluteLayout>
+			<ListView BackgroundColor="Transparent" x:Name="recipesList" Footer="" Margin="0,20,0,0" 
+				ItemsSource="{Binding AllRecipes}" ItemSelected="Recipe_Selected"
+				AbsoluteLayout.LayoutBounds="0,0,1,1"
+				AbsoluteLayout.LayoutFlags="SizeProportional">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding RecipeName}" 
+							Detail="{Binding CookTime, StringFormat='cook {0}'}" 
+							DetailColor="White" TextColor="White" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<foodieDroid:FoodieFab x:Arguments="{x:Static formsDroid:Forms.Context}" UseCompatPadding="true" 
+				AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"
+				Command="{Binding AddRecipeCommand}" />
+		</AbsoluteLayout>
+	</ContentPage.Content>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add" Command="{Binding AddRecipeCommand}" />			
+	</ContentPage.ToolbarItems>
+</ContentPage>

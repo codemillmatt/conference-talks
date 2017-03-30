@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Foodie; assembly=Foodie"
+		x:Class="Foodie.RecommendedRecipeCell">
+	<ViewCell.Height>
+		<OnPlatform x:TypeArguments="x:Double" iOS="90" Android="95" />
+	</ViewCell.Height>
+	<ContentView Margin="10" BackgroundColor="#F6F6F6"> 
+		<Grid ColumnSpacing="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="15" />
+				<RowDefinition Height="1.1*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1.5*" />
+				<ColumnDefinition Width="50" />
+			</Grid.ColumnDefinitions>
+
+			<Label Text="RECOMMENDED" TextColor="#FFFFFF" 
+				BackgroundColor="#4CAF50" Margin="0"
+				HorizontalTextAlignment="Center" FontSize="Micro" FontAttributes="Bold"
+				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  />
+			
+			<Label Text="{Binding RecipeName}" FontSize="Medium" FontAttributes="Bold" Margin="5,0,0,0"
+				Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+			
+			<Label Text="{Binding PreparationTime, StringFormat='Prep: {0}'}"
+				Margin="10,5,0,0" FontSize="Small" TextColor="#757575"
+				Grid.Row="2" Grid.Column="0" />
+			<Label Text="{Binding CookTime, StringFormat='Cook: {0}'}" 
+				Margin="0,5,0,0" FontSize="Small" TextColor="#757575"
+				Grid.Row="2" Grid.Column="1" />	
+		</Grid>
+	</ContentView>
+</ViewCell>

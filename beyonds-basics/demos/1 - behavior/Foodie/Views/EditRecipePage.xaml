@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:Foodie"
+		x:Class="Foodie.EditRecipePage"
+		Title="Foodie">
+	<ContentPage.Content>
+		<TableView Intent="Form" HasUnevenRows="true">
+			<TableView.Root>
+				<TableSection Title="Info">
+					<EntryCell Label="Recipe Name" Text="Scrambled Eggs" HorizontalTextAlignment="End"></EntryCell>
+					<EntryCell Label="Prep Time" Text="5 mins" HorizontalTextAlignment="End"></EntryCell>
+					<EntryCell Label="Cook Time" Text="2 mins" HorizontalTextAlignment="End"></EntryCell>
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Label Text="Number of Servings" VerticalOptions="Center" />
+								<Entry Text="2" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End">
+									<!-- A collection of behaviors -->
+									<Entry.Behaviors>
+										<!-- The behavior being added -->
+										<local:NumericEntryBehavior />
+									</Entry.Behaviors>
+								</Entry>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+					<SwitchCell Text="Make again?"></SwitchCell>
+				</TableSection>
+				<TableSection Title="Meal">
+					<ViewCell>
+						<ContentView>
+							<StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+								<Picker HorizontalOptions="FillAndExpand">
+									<Picker.Items>
+										<x:String>Breakfast</x:String>
+										<x:String>Lunch</x:String>
+										<x:String>Dinner</x:String>
+										<x:String>Snack</x:String>
+									</Picker.Items>
+									<Picker.SelectedIndex>0</Picker.SelectedIndex>
+								</Picker>
+							</StackLayout>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+				<TableSection Title="Ingredients">
+					<ViewCell>
+						<ContentView HeightRequest="125" Margin="15,10,10,10">
+							<Editor Text="8 eggs, 1/2 cup milk" />
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+				<TableSection Title="Directions">
+					<ViewCell>
+						<ContentView HeightRequest="200" Margin="15,10,10,10">
+							<Editor Text="Break eggs, mix in milk, pour mixture into skillet, put heat on, constant vigilance while cooking."></Editor>
+						</ContentView>
+					</ViewCell>
+				</TableSection>
+			</TableView.Root>
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>

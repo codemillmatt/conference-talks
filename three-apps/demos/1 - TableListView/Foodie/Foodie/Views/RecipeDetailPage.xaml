@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Foodie.RecipeDetailPage"
+	Title="Detail">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="200"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			
+			<BoxView BackgroundColor="#065ec4" Grid.Row="0" Grid.Column="0"></BoxView>
+			<Image Source="back.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"  />
+
+			<Label x:Name="recipeNameHeader" Text="Recipe name" Grid.Row="0" Grid.Column="0" Margin="50,50,0,0" FontSize="50" TextColor="White" />
+
+			<Label x:Name="recipeName" Text="Recipe name" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Margin="0,20,0,0"></Label>
+
+			<Label x:Name="cookTime" Text="The cook time is 10 minutes" Grid.Row="2" Grid.Column="0" Margin="20"></Label>
+
+			<Button x:Name="editRecipe" Text="Edit" TextColor="White" BackgroundColor="#065ec4" Grid.Row="3"></Button>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
