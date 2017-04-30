@@ -3,6 +3,7 @@
 
 Given at:
 * Indy.Code() - March 30, 2017
+* Chicago Code Camp - April 29, 2017
 
 ## Abstract
 You read that title correct – you can create an app for three different platforms all at once using Xamarin.Forms.
