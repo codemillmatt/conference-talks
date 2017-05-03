@@ -1,0 +1,17 @@
+﻿
+
+public override void DidUpdateFocus(UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
+{
+	if (context.NextFocusedView == this)
+	{
+		// Coming into focus
+		coordinator.AddCoordinatedAnimations(() =>
+		{
+			this.Transform = CGAffineTransform.Scale(CGAffineTransform.MakeIdentity(), 2, 2);
+		}, null);
+	}
+	else if (context.PreviouslyFocusedView == this) {
+		// Going out of focus
+		this.Transform = CGAffineTransform.Scale(CGAffineTransform.MakeIdentity(), 1, 1);
+	}
+}

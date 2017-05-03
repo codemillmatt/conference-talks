@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="13">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="12">
+            <objects>
+                <navigationController id="13" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="15">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y0x-qE-6m1" kind="relationship" relationship="rootViewController" id="N1C-Fe-Ewe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="-172"/>
+        </scene>
+        <!--Cheese Collection Controller-->
+        <scene sceneID="DrS-p5-r67">
+            <objects>
+                <collectionViewController id="Y0x-qE-6m1" customClass="CheeseCollectionController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tIk-Si-edd" customClass="CheeseCollectionView">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="25" id="R9c-Up-A61">
+                            <size key="itemSize" width="525" height="550"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="110" minY="25" maxX="110" maxY="25"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheeseCell" id="QUl-sC-Z3Y" customClass="CheeseViewCell">
+                                <rect key="frame" x="110" y="25" width="525" height="550"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="110" y="25" width="525" height="550"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="24" kind="push" identifier="pushCheeseDetail" id="86"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Y0x-qE-6m1" id="8lk-Zv-VGH"/>
+                            <outlet property="delegate" destination="Y0x-qE-6m1" id="KUi-QY-oXE"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="5ef-Iz-qyZ"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C7T-Qx-lyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-198" y="1107"/>
+        </scene>
+        <!--Cheese Detail Controller-->
+        <scene sceneID="23">
+            <objects>
+                <viewController id="24" customClass="CheeseDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="21"/>
+                        <viewControllerLayoutGuide type="bottom" id="22"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="25">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59">
+                                <rect key="frame" x="172" y="209" width="180" height="91"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="118">
+                                <rect key="frame" x="172" y="335" width="677" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="677" id="121"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="128">
+                                <rect key="frame" x="844" y="181" width="232" height="132"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" image="Video"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="129">
+                                <rect key="frame" x="1227" y="181" width="232" height="132"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" image="Pairing"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="130">
+                                <rect key="frame" x="1604" y="181" width="232" height="132"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" image="Dairy"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WedgeOfApproval" translatesAutoresizingMaskIntoConstraints="NO" id="137" customClass="FocusImage">
+                                <rect key="frame" x="1192" y="475" width="301" height="362"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Making of..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="143">
+                                <rect key="frame" x="884" y="321" width="153" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pairings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="155">
+                                <rect key="frame" x="1289" y="321" width="107" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More by..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="156">
+                                <rect key="frame" x="1652" y="321" width="136" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="59" firstAttribute="leading" secondItem="25" secondAttribute="leading" constant="172" id="108"/>
+                            <constraint firstItem="59" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="64" id="109"/>
+                            <constraint firstItem="118" firstAttribute="top" secondItem="59" secondAttribute="bottom" constant="35" id="119"/>
+                            <constraint firstItem="118" firstAttribute="leading" secondItem="59" secondAttribute="leading" id="120"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cheeseName" destination="59" id="name-outlet-59"/>
+                        <outlet property="dairlyLabel" destination="156" id="name-outlet-156"/>
+                        <outlet property="dairyButton" destination="130" id="name-outlet-130"/>
+                        <outlet property="descriptionLabel" destination="118" id="name-outlet-118"/>
+                        <outlet property="makingButton" destination="128" id="name-outlet-128"/>
+                        <outlet property="makingOfLabel" destination="143" id="name-outlet-143"/>
+                        <outlet property="pairingButton" destination="129" id="name-outlet-129"/>
+                        <outlet property="pairingsLabel" destination="155" id="name-outlet-155"/>
+                        <outlet property="wedgeOfApproval" destination="137" id="name-outlet-137"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2549" y="1100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Dairy" width="90" height="90"/>
+        <image name="Pairing" width="90" height="90"/>
+        <image name="Video" width="90" height="90"/>
+        <image name="CheeseHolder" width="300" height="300"/>
+        <image name="Wisconsin" width="265" height="362"/>
+        <image name="PastureBackground" width="1920" height="1080"/>
+        <image name="WoodBackground" width="1920" height="1080"/>
+        <image name="Parmesan" width="525" height="460"/>
+        <image name="BlueCheese" width="525" height="350"/>
+        <image name="Mozzerella" width="525" height="403"/>
+        <image name="SoftWheels" width="522" height="403"/>
+        <image name="LittleBoyBlue" width="525" height="469"/>
+        <image name="Alpine" width="524" height="460"/>
+        <image name="Content" width="400" height="240"/>
+        <image name="Top Shelf Image" width="1920" height="720"/>
+    </resources>
+</document>

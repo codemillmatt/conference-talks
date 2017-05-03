@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{7E992340-0410-443D-BD87-589FAD77A5D5}</ProjectGuid>
+    <ProjectTypeGuids>{06FA79CB-D6CD-4721-BB4B-1BD202089C55};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OrganizationDemo</RootNamespace>
+    <AssemblyName>OrganizationDemo</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchEnableBitcode>true</MtouchEnableBitcode>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.TVOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Back.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Back.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Front.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Front.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Middle.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Middle.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Back.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Back.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Front.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Front.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Middle.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Middle.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\Top Shelf Image.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImages.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CheeseHolder.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CheeseHolder.imageset\Cheese.png" />
+    <ImageAsset Include="Assets.xcassets\Wisconsin.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Wisconsin.imageset\Wisconsin.png" />
+    <ImageAsset Include="Assets.xcassets\PastureBackground.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PastureBackground.imageset\PastureBackground.png" />
+    <ImageAsset Include="Assets.xcassets\WoodBackground.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\WoodBackground.imageset\WoodBoardBackground.png" />
+    <ImageAsset Include="Assets.xcassets\Parmesan.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Parmesan.imageset\Parmesan.png" />
+    <ImageAsset Include="Assets.xcassets\BlueCheese.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BlueCheese.imageset\BlueCheese.jpeg" />
+    <ImageAsset Include="Assets.xcassets\Mozzerella.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Mozzerella.imageset\Mozzerella.png" />
+    <ImageAsset Include="Assets.xcassets\SoftWheels.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\SoftWheels.imageset\SoftWheels.png" />
+    <ImageAsset Include="Assets.xcassets\LittleBoyBlue.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LittleBoyBlue.imageset\LittleBoyBlue.jpg" />
+    <ImageAsset Include="Assets.xcassets\Alpine.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Alpine.imageset\Alpine.jpg" />
+    <ImageAsset Include="Assets.xcassets\Video.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Video.imageset\video.pdf" />
+    <ImageAsset Include="Assets.xcassets\Video.imageset\video.png" />
+    <ImageAsset Include="Assets.xcassets\Pairing.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Dairy.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Dairy.imageset\dairy.png" />
+    <ImageAsset Include="Assets.xcassets\Pairing.imageset\pairing.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 1.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 1.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 1.imagestacklayer\Content.imageset\WedgeOfApprovalText.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 2.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 2.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 2.imagestacklayer\Content.imageset\WedgeOfApprovalWI.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 3.imagestacklayer\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 3.imagestacklayer\Content.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\WedgeOfApproval.imagestack\Layer 3.imagestacklayer\Content.imageset\WedgeOfApprovalBackground.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Back.imagestacklayer\Content.imageset\icon.jpeg" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Front.imagestacklayer\Content.imageset\icon.jpeg" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Large.imagestack\Middle.imagestacklayer\Content.imageset\icon.jpeg" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Back.imagestacklayer\Content.imageset\HomeIcon.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Front.imagestacklayer\Content.imageset\HomeIcon.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\App Icon - Small.imagestack\Middle.imagestacklayer\Content.imageset\HomeIcon.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\App Icon &amp; Top Shelf Image.brandassets\Top Shelf Image.imageset\TopShelf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\CheeseHolder.imageset\" />
+    <Folder Include="Assets.xcassets\Wisconsin.imageset\" />
+    <Folder Include="Models\" />
+    <Folder Include="Assets.xcassets\PastureBackground.imageset\" />
+    <Folder Include="Snippets\" />
+    <Folder Include="Assets.xcassets\WoodBackground.imageset\" />
+    <Folder Include="CollectionView\" />
+    <Folder Include="ViewCells\" />
+    <Folder Include="Assets.xcassets\Parmesan.imageset\" />
+    <Folder Include="Assets.xcassets\BlueCheese.imageset\" />
+    <Folder Include="Assets.xcassets\Mozzerella.imageset\" />
+    <Folder Include="Assets.xcassets\SoftWheels.imageset\" />
+    <Folder Include="Assets.xcassets\LittleBoyBlue.imageset\" />
+    <Folder Include="Assets.xcassets\Alpine.imageset\" />
+    <Folder Include="Assets.xcassets\Video.imageset\" />
+    <Folder Include="Assets.xcassets\Pairing.imageset\" />
+    <Folder Include="Assets.xcassets\Dairy.imageset\" />
+    <Folder Include="Assets.xcassets\WedgeOfApproval.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="Snippets\FocusImageControl.txt" />
+    <None Include="Snippets\FocusAnimation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Models\CheeseDetail.cs" />
+    <Compile Include="CheeseCollectionController.cs" />
+    <Compile Include="CheeseCollectionController.designer.cs">
+      <DependentUpon>CheeseCollectionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheeseDetailController.cs" />
+    <Compile Include="CheeseDetailController.designer.cs">
+      <DependentUpon>CheeseDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionView\CheeseDataSource.cs" />
+    <Compile Include="CollectionView\CheeseDelegate.cs" />
+    <Compile Include="ViewCells\CheeseViewCell.cs" />
+    <Compile Include="ViewCells\CheeseViewCell.designer.cs">
+      <DependentUpon>CheeseViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionView\CheeseCollectionView.cs" />
+    <Compile Include="CollectionView\CheeseCollectionView.designer.cs">
+      <DependentUpon>CheeseCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FocusImage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Assets.car" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
+</Project>
