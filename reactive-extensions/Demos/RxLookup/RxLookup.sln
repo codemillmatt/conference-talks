@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxLookup", "RxLookup\RxLookup.csproj", "{631FEDD2-55BD-4E75-B31D-27924EB03FAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Debug|iPhone.Build.0 = Debug|iPhone
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Release|iPhone.ActiveCfg = Release|iPhone
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Release|iPhone.Build.0 = Release|iPhone
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{631FEDD2-55BD-4E75-B31D-27924EB03FAA}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+EndGlobal

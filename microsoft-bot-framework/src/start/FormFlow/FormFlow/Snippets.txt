@@ -1,0 +1,15 @@
+﻿public static IForm<TalkReview> BuildForm()
+{
+    return new FormBuilder<TalkReview>()
+        .Message("Would you provide some feedback on this talk?")
+        .Build();
+}
+		
+internal static IDialog<TalkReview> MakeRoot()
+{
+    return Chain.From(() => FormDialog.FromForm(TalkReview.BuildForm));
+}
+		
+
+
+await Conversation.SendAsync(activity, MakeRoot);

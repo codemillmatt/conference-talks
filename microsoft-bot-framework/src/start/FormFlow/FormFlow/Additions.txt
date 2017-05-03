@@ -1,0 +1,8 @@
+﻿Talk Review:
+[Prompt]
+
+.Message("")
+.Field(nameof(email))
+.Field(nameof(name))
+.AddRemainingFields()
+.Build()

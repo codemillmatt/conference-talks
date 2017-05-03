@@ -1,0 +1,37 @@
+					if (matches.Count == 0)
+					{
+                        await connector.Conversations.ReplyToActivityAsync(activity.CreateReply("Couldn't find the weather!"));
+                    }
+                    else if (matches.Count == 1)
+                    {
+                        var weather = new WeatherService.WeatherService();
+                        var current = await weather.GetCurrentConditions(matches[0].Latitude, matches[0].Longitude);
+
+                        var reply = activity.CreateReply($"The current conditions for {matches[0].CityState} are {current.Summary} and {current.CurrentTemp}.");
+
+                        await connector.Conversations.ReplyToActivityAsync(reply);
+                    }
+                    else
+                    {
+                        var cityHero = new HeroCard();
+                        cityHero.Title = "Which city?";
+                        cityHero.Subtitle = $"Multiple cities found for {cityName}";
+                        cityHero.Text = "Select which city you want the weather for:";
+                        cityHero.Buttons = new List<CardAction>();
+
+                        foreach (var city in matches)
+                        {
+                            var cityAction = new CardAction();
+                            cityAction.Type = ActionTypes.PostBack;
+                            cityAction.Value = city.CityState;
+                            cityAction.Title = city.CityState;
+
+                            cityHero.Buttons.Add(cityAction);
+                        }
+
+                        var cityHeroReply = activity.CreateReply();
+                        cityHeroReply.Attachments = new List<Attachment>();
+                        cityHeroReply.Attachments.Add(cityHero.ToAttachment());
+
+                        await connector.Conversations.ReplyToActivityAsync(cityHeroReply);
+                    }

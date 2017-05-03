@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{E5005E99-6C0A-4BCF-92A1-7DBF3AFEA463}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Cheesed.Local</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Cheese.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Rating.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPlatform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICheeseDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataService\LocalCheeseDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\RecentRatingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RecentRatingsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchCheeseView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SearchCheeseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AddCheeseAndRatingViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AddCheeseAndRatingView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\CheeseAndRating.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AddRatingView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AddRatingViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RatingDetailView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\RatingDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataService\AzureCheeseDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataService\OfflineCheeseDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\NoInternetException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CardView\CardView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CardView\CardStatusView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CardView\CardDetailsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CheeseColors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CardView\WedgeView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Rating\RatingView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)DataService\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Exceptions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\CardView\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Rating\" />
+  </ItemGroup>
+</Project>
