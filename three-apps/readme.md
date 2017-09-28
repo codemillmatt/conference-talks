@@ -12,6 +12,9 @@ You read that title correct – you can create an app for three different platfo
 
 Xamarin.Forms has come a long way since the days of when its recommended use was for simple apps and prototyping only and in this session, I will show you the advances made and how to utilize them to create beautiful apps yourself. You will see the basic structure of a Xamarin.Forms app and how to use XAML and the built-in controls to create a UI. You’ll learn about the MVVM pattern and data binding so information can be presented and modified in the UI and app logic layer with ease. You’ll walk through accessing platform specific native controls – from XAML! At the end of this session – you’ll be able to create a beautiful app – make that three beautiful apps – with Xamarin.Forms.
 
+## The Slides
+[Here you go](https://www.slideshare.net/MatthewSoucoup/creating-3-beautiful-apps-at-once-intro-to-xamarinforms)
+
 ## Demos
 1. ListViews and TableViews - A hello world demo, if you will, showing how to build up a simple list view. Note the `ItemTemplate`, `DataTemplate` and `TextCell` - which displays the data. The edit page recieves the data. Note the `TableView`. The `Root` holds the entire view, while `Section`s are individual sections that are grouped by related data. `Cells` will take in data. The detail page display data. It uses a `Grid`, which extremely useful for displaying data in a 2-Dimensional layout. Where the controls are laid out within the `Grid` are actually specified within the control's definition instead of the `Grid`.
 
