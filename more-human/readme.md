@@ -2,6 +2,10 @@
 
 Given At:
 * That Conference - August 7, 2017
+* Prairie.Code() - September 28, 2017
+
+## The Slides
+[Here they are](https://www.slideshare.net/MatthewSoucoup)
 
 ### Abstract
 Part of the human experience is being able to look at a scene and judge what is going on; who/what the participants are, and know if they are happy or sad, frightened or mad. Or recognize a person’s voice and understand a conversation.
